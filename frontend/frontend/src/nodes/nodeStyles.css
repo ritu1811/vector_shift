@@ -1,0 +1,130 @@
+/* src/nodes/nodeStyles.css */
+
+.node-card {
+  background: var(--bg-modal);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-radius: 16px;
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-sm), var(--glass-rim);
+  padding: 16px;
+  min-width: 220px;
+  font-family: 'Inter', sans-serif;
+  color: var(--text-main);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+}
+
+.node-card:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: var(--shadow-lg), var(--glass-rim);
+  border-color: var(--handle-border); 
+}
+
+.react-flow__node.selected .node-card {
+  border-color: var(--handle-border);
+  box-shadow: 0 0 0 2px var(--shadow), var(--shadow-lg), var(--glass-rim);
+}
+
+.node-header {
+  font-size: 1.1rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 12px;
+  color: var(--text-main);
+  letter-spacing: 0.5px;
+  background: var(--accent-gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.node-body {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  flex-grow: 1;
+}
+
+.node-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.node-label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.node-input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 8px 12px;
+  font-size: 0.9rem;
+  font-family: 'Inter', sans-serif;
+  color: var(--text-main);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  background: var(--input-bg);
+  box-shadow: inset 0 2px 4px rgba(0,0,0,0.04);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+textarea.node-input {
+  flex-grow: 1;
+}
+
+.node-input:focus {
+  outline: none;
+  border-color: var(--handle-border);
+  background: var(--bg-panel);
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2);
+}
+
+select.node-input {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%2394a3b8' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  padding-right: 36px;
+}
+
+select.node-input option {
+  background: var(--bg-main);
+  color: var(--text-main);
+}
+
+.node-handle {
+  width: 14px !important;
+  height: 14px !important;
+  background: var(--bg-main) !important;
+  border: 2px solid var(--handle-border) !important;
+  border-radius: 50% !important;
+  transition: all 0.2s ease;
+}
+
+.node-handle:hover {
+  background: var(--handle-border) !important;
+  transform: scale(1.2);
+}
+
+.react-flow__connection-path {
+  stroke: var(--handle-border) !important;
+  stroke-width: 3 !important;
+}
+.react-flow__edge-path {
+  stroke: var(--handle-border) !important;
+  opacity: 0.6;
+  stroke-width: 2 !important;
+}
+.react-flow__edge-path:hover {
+  stroke: var(--handle-border) !important;
+  opacity: 1;
+  stroke-width: 3 !important;
+}
